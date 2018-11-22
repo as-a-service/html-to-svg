@@ -1,0 +1,13 @@
+{
+  "name": "screenshot",
+  "version": "1.0.0",
+  "description": "Takes screenshot of the given URL.",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "express": "^4.16.4",
+    "puppeteer": "^1.10.0"
+  }
+}
