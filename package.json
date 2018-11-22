@@ -2,6 +2,7 @@
   "name": "screenshot",
   "version": "1.0.0",
   "description": "Takes screenshot of the given URL.",
+  "author": "Steren Giannini",
   "scripts": {
     "start": "node server.js"
   },
