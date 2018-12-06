@@ -1,6 +1,8 @@
 # Takes a screenshot of the given page
 
-A simple web service that takes screenshot of the given URL
+A simple web service that takes screenshot of the given URL.
+
+Run with `docker run -p 8080:8080 gcr.io/steren-demo/screenshot`
 
 ## API
 
