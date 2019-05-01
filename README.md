@@ -4,6 +4,8 @@ A simple web service that takes screenshot of the given URL.
 
 Run with `docker run -p 8080:8080 gcr.io/as-a-service-dev/screenshot`
 
+[![Run on Google Cloud](https://storage.googleapis.com/cloudrun/button.png)](https://console.cloud.google.com/cloudshell/editor?shellonly=true&cloudshell_image=gcr.io/cloudrun/button&cloudshell_git_repo=https://github.com/as-a-service/screenshot.git)
+
 ## API
 
 ### URL parameters:
