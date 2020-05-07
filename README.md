@@ -1,6 +1,6 @@
 # Saves the given URL to an SVG file
 
-A simple web service that saves the given URL to an SVG immage.
+A simple web service that saves the given URL to an SVG image.
 
 Run with `docker run -p 8080:8080 gcr.io/as-a-service-dev/html-to-svg`
 
