@@ -1,4 +1,4 @@
-const puppeteer = require('puppeteer');
+import puppeteer from 'puppeteer';
 
 /**
  * HTTP Cloud Function.
@@ -8,7 +8,7 @@ const puppeteer = require('puppeteer');
  * @param {Object} req Cloud Function request context.
  * @param {Object} res Cloud Function response context.
  */
-exports.screenshot = async (req, res) => {
+async function htmltosvg (req, res) {
     const url = req.query.url;
   
     if (!url) {
@@ -26,4 +26,6 @@ exports.screenshot = async (req, res) => {
     res.set('Content-Type', 'image/png');
     res.send(imageBuffer);
   };
+
+  export {htmltosvg};
   
