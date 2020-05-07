@@ -25,6 +25,7 @@ async function htmltosvg (req, res) {
 
     await page.goto(url);
     // https://github.com/puppeteer/puppeteer/blob/master/docs/api.md#pagepdfoptions
+    await page.emulateMediaType('screen');
     await page.pdf({
         path: inputPDFFilename,
         format: 'A3',
