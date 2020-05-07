@@ -1,6 +1,6 @@
 import puppeteer from 'puppeteer';
 import * as child from 'child_process';
-import {writeFile, readFile} from 'fs/promises'
+import {readFile} from 'fs/promises'
 
 let browser;
 let page;
@@ -25,9 +25,11 @@ async function htmltosvg (req, res) {
 
     await page.goto(url);
     // https://github.com/puppeteer/puppeteer/blob/master/docs/api.md#pagepdfoptions
-    const pdf = await page.pdf({ format: 'A4' });
-
-    await writeFile(inputPDFFilename, pdf);
+    await page.pdf({
+        path: inputPDFFilename,
+        format: 'A3',
+        printBackground: true
+    });
 
     child.exec(`inkscape --file ${inputPDFFilename} --export-plain-svg ${outputSVGFilename}`, async (error, stdout, stderr) => {
         if (error) {
