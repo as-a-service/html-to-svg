@@ -1,4 +1,4 @@
-FROM node:14
+FROM node:14-slim
 
 RUN apt-get update && \
     # Adds required libs for Headless Chrome
