@@ -10,7 +10,7 @@
   "type": "module",
   "dependencies": {
     "express": "^4.17.1",
-    "puppeteer": "^1.20.0"
+    "puppeteer": "^3.0.4"
   },
   "engines": {
     "node": ">=14"
