@@ -21,3 +21,5 @@ Example: `/?url=https://steren.fr`
 * Build with `docker build . -t html-to-svg`
 * Start with `docker run -p 8080:8080 html-to-svg`
 * Open in your browser at `http://localhost:8080/?url=https://steren.fr`
+
+![CloudBuild](https://badger-l7zawt5jsq-uw.a.run.app/build/status?project=as-a-service-dev&id=6fd4fa14-6e16-4a60-a754-9fd4ffe8872d)
