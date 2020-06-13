@@ -11,6 +11,8 @@ Run with `docker run -p 8080:8080 gcr.io/as-a-service-dev/html-to-svg`
 ### URL parameters:
 
 * `url`: The URL of the website to capture
+* (`width`): The viewport width (in pixels), defaults to 1280
+* (`height`): The viewport height (in pixels), defaults to 800
 
 Example: `/?url=https://steren.fr`
 

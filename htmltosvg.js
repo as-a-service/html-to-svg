@@ -14,6 +14,9 @@ async function htmltosvg (req, res) {
       return res.send('Please provide URL as GET parameter, for example: <a href="?url=https://steren.fr">?url=https://steren.fr</a>');
     }
 
+    const width = req.query.width || 1280;
+    const height = req.query.height || 800;
+
     if(!browser) {
         browser = await puppeteer.launch({
             args: ['--no-sandbox']
@@ -23,6 +26,7 @@ async function htmltosvg (req, res) {
         page = await browser.newPage();
     }
 
+    await page.setViewport({width, height});
     await page.goto(url);
     // https://github.com/puppeteer/puppeteer/blob/master/docs/api.md#pagepdfoptions
     await page.emulateMedia('screen');
