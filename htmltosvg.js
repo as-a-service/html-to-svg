@@ -26,15 +26,19 @@ async function htmltosvg (req, res) {
         page = await browser.newPage();
     }
 
-    await page.setViewport({width, height});
+    console.log(`Loading (width: ${width}, height: ${height}): ${url}`);
     await page.goto(url);
     // https://github.com/puppeteer/puppeteer/blob/master/docs/api.md#pagepdfoptions
     await page.emulateMedia('screen');
-    await page.pdf({
+    let printParams = {
         path: inputPDFFilename,
-        format: 'A3',
+        width,
         printBackground: true
-    });
+    };
+    if(height) {
+        printParams.height = height;
+    }
+    await page.pdf(printParams);
 
     // https://inkscape.org/doc/inkscape-man.html
     // When available (Inkscape 1.0), shuld we use --pdf-poppler for better fidelity? text would be transformed to path  https://gitlab.com/inkscape/inkscape/-/issues/263
