@@ -14,8 +14,8 @@ async function htmltosvg (req, res) {
       return res.send('Please provide URL as GET parameter, for example: <a href="?url=https://steren.fr">?url=https://steren.fr</a>');
     }
 
-    const width = req.query.width || 1280;
-    const height = req.query.height || 800;
+    const width = req.query.width ? parseInt(req.query.width, 10) : 1280;
+    const height = req.query.height ? parseInt(req.query.height, 10) : 800;
 
     if(!browser) {
         browser = await puppeteer.launch({
